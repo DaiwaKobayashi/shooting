@@ -22,13 +22,10 @@ int     score;          //!< スコア
 void Start()
 {
     cloudPos = Vector2(-320, 100);
-<<<<<<< HEAD
     cannonPos = Vector2(-310, -150);
     targetRect = Rect(280, -140, 40, 40);
-=======
     cannonPos = Vector2(-305, -150);
     targetRect = Rect(275, -140, 40, 40);
->>>>>>> shooting/feature/a
     bulletPos.x = -999;
     score = 0;
     
