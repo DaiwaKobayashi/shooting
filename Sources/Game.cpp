@@ -3,8 +3,13 @@
 
 // TODO: 砲台の位置を画面左に、ターゲットの位置を画面右に移動させる。(A)
 // TODO: 雲の位置を左から右に動かす。見えなくなったら左端に戻す。(B)
+<<<<<<< HEAD
 // TODO: 砲台を青い壁に沿って上下に動かす。(HW16A179　牧　和輝)
 // TODO: 弾のスピードを速くし、弾が画面右端を通り越したら再度発射可能にする。(D)
+=======
+// TODO: 砲台を青い壁に沿って上下に動かす。(C)
+// TODO: 弾のスピードを速くし、弾が画面右端を通り越したら再度発射可能にする。(HW16A179　牧　和輝)
+>>>>>>> shooting/feature/d
 // TODO: スコアのサイズを大きくする。(E)
 // TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)
 // TODO: PlayBGM()関数を使って、BGMを再生する。(G)
@@ -58,15 +63,22 @@ void Update()
 
     // 弾の移動
     if (bulletPos.x > -999) {
-        bulletPos.x += 10 * Time::deltaTime;
-
+        bulletPos.x += 200 * Time::deltaTime;
+        
         // ターゲットと弾の当たり判定
         Rect bulletRect(bulletPos, Vector2(32, 20));
         if (targetRect.Overlaps(bulletRect)) {
-            score += 1;         // スコアの加算
+            score += 100;         // スコアの加算
             bulletPos.x = -999; // 弾を発射可能な状態に戻す
         }
+        
+        // ターゲットに当たらない場合
+        if (bulletPos.x >= 335) {
+            // 弾を発射可能な状態に戻す
+            bulletPos.x = -999;
+        }
     }
+    
 
     // 背景の描画
     Clear(Color::cyan);
