@@ -1,14 +1,14 @@
 #include "Game.hpp"
 
 
-// TODO: 砲台の位置を画面左に、ターゲットの位置を画面右に移動させる。(A)
-// TODO: 雲の位置を左から右に動かす。見えなくなったら左端に戻す。(B)
+// TODO: 砲台の位置を画面左に、ターゲットの位置を画面右に移動させる。(HW16A130　東出　和也)
+// TODO: 雲の位置を左から右に動かす。見えなくなったら左端に戻す。(HW16A130　東出　和也)
 // TODO: 砲台を青い壁に沿って上下に動かす。(HW16A179　牧　和輝)
 // TODO: 弾のスピードを速くし、弾が画面右端を通り越したら再度発射可能にする。(HW16A179　牧　和輝)
-// TODO: スコアのサイズを大きくする。(E)
-// TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(F)
-// TODO: PlayBGM()関数を使って、BGMを再生する。(G)
-// TODO: PlaySE()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(H)
+// TODO: スコアのサイズを大きくする。(HW16A078　小林　大輪)
+// TODO: スコアを100点ずつ加算するようにし、5桁の表示に変える。(HW16A078　小林　大輪)
+// TODO: PlayBGM()関数を使って、BGMを再生する。(HW16A062　木下　誠也)
+// TODO: PlaySE()関数を使って、弾の発射時とターゲットに当たった時にSEを再生する。(HW16A062　木下　誠也)
 
 
 Vector2 cloudPos;       //!< 雲の位置
@@ -106,14 +106,9 @@ void Update()
     FillRect(targetRect, Color::red);
 
     // スコアの描画
-<<<<<<< HEAD
     SetFont("nicoca_v1.ttf", 50.0f);
-    DrawText(FormatString("%02d", score), Vector2(-319, 199), Color::black);
-    DrawText(FormatString("%02d", score), Vector2(-320, 200), Color::white);
-=======
-    SetFont("nicoca_v1.ttf", 20.0f);
     DrawText(FormatString("%05d", score), Vector2(-319, 199), Color::black);
     DrawText(FormatString("%05d", score), Vector2(-320, 200), Color::white);
->>>>>>> shooting/feature/f
+
 }
 
