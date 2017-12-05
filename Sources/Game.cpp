@@ -39,6 +39,14 @@ void Start()
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
 void Update()
 {
+    if (cloudPos.x > -600) {
+        cloudPos.x += 500 * Time::deltaTime;
+
+        if(cloudPos.x > 320){
+            cloudPos.x = -550;
+    }
+    }
+    
     // 弾の発射
     if (bulletPos.x <= -999 && Input::GetKeyDown(KeyMask::Space)) {
         bulletPos = cannonPos + Vector2(50, 10);
