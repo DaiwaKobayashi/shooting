@@ -21,7 +21,7 @@ int     score;          //!< スコア
 // ゲーム開始時に呼ばれる関数です。
 void Start()
 {
-    cloudPos = Vector2(100, 100);
+    cloudPos = Vector2(-320, 100);
     cannonPos = Vector2(-80, -150);
     targetRect = Rect(80, -140, 40, 40);
     bulletPos.x = -999;
@@ -31,6 +31,14 @@ void Start()
 // 1/60秒ごとに呼ばれる関数です。モデルの更新と画面の描画を行います。
 void Update()
 {
+    if (cloudPos.x > -600) {
+        cloudPos.x += 500 * Time::deltaTime;
+
+        if(cloudPos.x > 320){
+            cloudPos.x = -550;
+    }
+    }
+    
     // 弾の発射
     if (bulletPos.x <= -999 && Input::GetKeyDown(KeyMask::Space)) {
         bulletPos = cannonPos + Vector2(50, 10);
